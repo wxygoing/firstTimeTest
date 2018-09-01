@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>伸缩菜单,水平方向</title>
+	<style type="text/css">
+		/* 下划线去除：   a{text-decoration:none}
+		文本缩进标签 text-indent 不会影响总体宽度（padding会）
+		需要将a标签设置为块元素，才能设高宽、hover效果   代码：a{display:block}
+		hover格式   a:hover{} */
+		*{margin: 0;padding: 0;font-size: 14px;}/* 初始化页面设置*/
+		ul{list-style: none;height: 50px;padding-left: 30px; border-bottom: 5px solid #F60;}
+		/* list-style: none;无序列表圆点去除 */
+		li{float: left;margin-top: 20px;} /* //将垂直菜单变成水平菜单 */
+		a{text-decoration: none; display: block;height: 30px;line-height: 30px;width: 120px;background-color: #ccc;margin-bottom: 1px;text-align: center;}
+		/*line-height 属性设置行间的距离（行高）。注释：不允许使用负值。 用于文字上下居中*/
+		 .on, a:hover{color: #fff; background-color: #f60;}
+
+	</style>
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('a').hover(
+				function() {
+					//把上一个动画清理掉
+					$(this).stop().animate({'width': '160px'}, 250);
+				},
+				function() {
+					$(this).stop().animate({'width': '120px'}, 250);
+				}
+			);
+		});
+	</script>
+</head>
+<body>
+	<ul>
+		<li><a class="on" href="#">首   页</a></li>
+		<li><a href="#">新闻快讯</a></li>
+		<li><a href="#">产品展示</a></li>
+		<li><a href="#">售后服务</a></li>
+		<li><a href="#">联系我们</a></li>
+	</ul>
+
+</body>
+</html>

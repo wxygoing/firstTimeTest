@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>圆角贴图</title>
+	<style type="text/css">
+		/* 下划线去除：   a{text-decoration:none}
+		文本缩进标签 text-indent 不会影响总体宽度（padding会）
+		需要将a标签设置为块元素，才能设高宽、hover效果   代码：a{display:block}
+		hover格式   a:hover{} */
+		*{margin: 0;padding: 0;font-size: 14px;}/* 初始化页面设置*/
+		ul{list-style: none;height: 50px;padding-left: 30px; border-bottom: 5px solid #F60;}  /*给水平菜单添加整体背景，需要对height和width进行设置，因为菜单<li>浮动后，<li>脱离了文档流，导致<ul>将失去高度和宽度；如果需要对<ul>进行整体背景设置，首先要给定义宽，高*/
+		/* list-style: none;无序列表圆点去除 */
+		li{float: left;margin-top: 20px;} /* //将垂直菜单变成水平菜单 */
+		a{text-decoration: none; display: block;height: 30px;line-height: 30px;width: 120px;background-color: #ccc;margin-bottom: 1px;text-align: center;background: url(images/btnBg.png);}
+		 .on, a:hover{color: #fff; background-position: 0 -29px;}
+			/* background-position: 0 -30px;背景图片沿着y轴上移30px,x轴不变 */
+		  /* color 字体颜色；不知为什么-30会有1像素偏差，在Google浏览器， ie没有 */
+	</style>
+</head>
+<body>
+	<ul>
+		<li><a class="on" href="#">首   页</a></li>
+		<li><a href="#">新闻快讯</a></li>
+		<li><a href="#">产品展示</a></li>
+		<li><a href="#">售后服务</a></li>
+		<li><a href="#">联系我们</a></li>
+	</ul>
+
+</body>
+</html>
