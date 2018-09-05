@@ -23,6 +23,22 @@
 		3.offsetWidth属性返回值是整数，而style.width的返回值是字符串，并且带有单位。
 		4.style.width仅能返回以style方式定义的内部样式表的width属性值。*/
 		window.onload = function() {
+			straightInsertionSort([3,1,2,4,5,3,8,6,7]);
+			function straightInsertionSort(table) {
+			    for (let i = 1; i < table.length; i++) {
+			        for (let j = i - 1; j >= 0; j--) {  //
+			            if (table[i] < table[j]) { // 反序时，交换
+			                let temp = table[i];
+			                table[i] = table[j];
+			                table[j] = temp;
+			            } else {
+			                break;
+			            }
+			        }
+			    }
+			    return table;
+			}
+
 			let aLable = document.getElementsByTagName('a');
 			for (let i = 0; i < aLable.length; i++) {
 				aLable[i].onmouseover = function() {  // 这写法不好
