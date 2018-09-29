@@ -20,7 +20,7 @@ function mouseoverHandler(e) {
 		list[i].className = '';
 	}
 	//根据事件的冒泡原理，找到需要变更的class的LI元素
-	//IE适用吗？？？？
+	//IE适用吗？？？？ 应该适用，可以通过取消冒泡达到效果吗？
 	while(target.tagName != 'LI' || target.tagName == 'BODY'){
         target = target.parentNode;
     }

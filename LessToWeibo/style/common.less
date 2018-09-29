@@ -1,0 +1,419 @@
+@charset 'utf-8';
+//引入库
+@import 'less/z';
+@import 'less/css3';
+//引入公用变量
+@import 'bl';
+
+.reset();
+
+body{
+	background-color: @body_bgc;
+}
+//header
+.header {
+	@h: 65px;
+	@border: 2px;
+
+	border-top: @border solid @link_hover;
+	height: @h;
+	background-color: #fff;
+	&_content {
+		.bc();
+		width: 1300px;
+		.clearfix();
+	}
+	.logo {
+		height: 43px;
+		width: 125px;
+		background: url('../img/logo.jpg') left top no-repeat;
+		.fl();
+		margin: 11px 33px 11px 0;
+		a {
+			display: block;
+			height: 100%;
+			text-indent: -99em;
+		}
+	}
+
+	//search
+	.search {
+		.fl();
+		@search_w: 606px;
+		@search_h: 37px;
+		@input_w: 562px;
+
+		width: @search_w;
+		height: @search_h;
+		border:solid 1px #ccc;
+		background-color: #f2f2f5;
+		margin: (@h - @search_h - 2)/2 0;
+		&_input{
+			width: @input_w - 16px;
+			.fl();
+			height: @search_h;
+			line-height: @search_h; //~"\9px";  此处有问题
+			padding: 0 10px;
+		}
+		&_btn {
+			width: 34px;
+			height: 26px;
+			background: url('../img/search_btn.jpg') left top no-repeat;
+			margin-top: 7px; //(@search_h - 34px)/2;
+			margin-right: 4px;
+			.fr();
+		}
+	}
+
+	&Nav {
+		.fr();
+		@nav_h: 33px;
+		height: @nav_h;
+		margin: (@h - @nav_h)/2 0;
+		.font-fm();
+		.font-s15();
+		li {
+			.fl();
+			margin-right: 12px;
+		}
+		a{
+			height: @nav_h;
+			line-height: @nav_h;
+			.d-ib();
+			color: @link_color;
+			background: url('../img/icon_01.jpg') left center no-repeat;
+			padding-left: 40px;
+			&:hover{
+				color: @link_hover;
+			}
+		}
+	}
+}
+
+//main
+.main {
+	width: @main_width;
+	.bc();
+	background-color: @main_bgc;
+	//height: 300px;
+	padding-top: 16px;
+	.clearfix();
+}
+.leftArea {
+	width: @lw;
+	.fl();
+}
+.rightArea{
+	width: @rw;
+	.fr();
+	margin-right: 10px;
+}
+.leftArea_cont {
+	width: @l_cont_w;
+	.fl();
+}
+.leftCont{
+	width: @lw - @l_cont_w;
+	.fr();
+}
+.nav {
+	.font-s12();
+	.font-fm();
+	line-height: 34px;
+	a{
+		color:#fff;
+		height: 34px;
+		.d-b();
+		padding-left: 15px;
+		&:hover{
+			background-color: #98cee7;
+		}
+	}
+	&_line{
+		height: 1px;
+		background-color: #98cee7;
+		overflow: hidden;
+	}
+	.strong_font{
+		font-weight: bold;
+	}
+}
+
+//发布框
+.releaseBox {
+	@h: 165px;
+	@pt: 15px;
+	height: @h - @pt;
+	padding-top: @pt;
+	background-color: #fff;
+	.border-radius(2px);
+	.release_top{
+		padding: 0 12px;
+		.clearfix();
+		margin-bottom: 8px;
+	}
+	.release_text{
+		width: 250px;
+		height: 25px;
+		background: url('../img/new_bg.jpg') left center no-repeat;
+		text-indent: -99em;
+		.fl();
+	}
+	.release_links {
+		.fr();
+		height: 18px;
+		line-height: 18px;
+		.font-fm();
+		.font-s12();
+		a{
+			color: @link_color_blue;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+	//发布框
+	.release_area {
+		height: 78px;
+		border: solid 1px #ccc;
+		margin: 0 10px;
+		margin-bottom: 5px;
+		textarea{
+			width: 100%;
+			height: 78px;
+			line-height: 78px;
+			.font-fm();
+			.font-s12();
+		}
+	}
+	//表情选择
+	.release_select {
+		.clearfix();
+		padding: 0 10px;
+	}
+	.release_texts {
+		padding-top: 6px;
+		.fl();
+		.font-fm();
+		.font-s12();
+		li {
+			.fl();
+			margin-right: 20px;
+		}
+		a {
+			height: 19px;
+			line-height: 19px;
+			color: @link_color;
+			padding-left: 25px;
+			background: url('../img/bq.jpg') left center no-repeat;
+			.d-ib();
+			&:hover {
+				color: @link_hover;
+			}
+		}
+	}
+	//按钮
+	.release_btns {
+		.fr();
+	}
+	.u_releases_btn {
+		width: 82px;
+		height: 30px;
+		background-color: #ffc09f;
+		.border-radius(2px);
+		.font-fm();
+		.font-s12();
+		color: #fff;
+	}
+	.u_btn_active {
+		background-color: #ff8140;
+	}
+}
+
+//内容
+.item {
+	//@h: 400px;
+	@pt: 15px;
+	//height: @h - @pt;
+	padding-top: @pt;
+	background-color: #fff;
+	.clearfix();
+	.border-radius(2px);
+	margin-top: 12px;
+
+	@width: 50px;
+	dt {
+		width: @width;
+		height: @width;
+		.fl();
+	}
+
+	.item_userName {
+		padding-left: 10px;
+		a {
+			.font-fm();
+			.font-s15();
+			color: @link_color;
+			&:hover {
+				color: @link_color_blue;
+			}
+		}
+	}
+	.item_content {
+		.font-fm();
+		.font-s12();
+		a {
+			.font-fm();
+			.font-s15();
+			color: @link_color_blue;
+		}
+		.clearfix();
+	}
+	.item_option {
+		.clearfix();
+		height: 22px;
+		padding: 8px 0;
+		border-top: solid 1px #ccc;
+		.tc();
+		li {
+			.fl();
+			width: 25%;
+			height: 100%;
+			border-right: solid 1px #ccc;
+			margin-right: -1px;
+		}
+		a {
+			color: @link_color;
+			&:hover {
+				color: @link_color_blue;
+			}
+		}
+	}
+}
+//用户
+.userCard {
+	@h: 165px;
+	height: @h;
+	overflow: hidden;
+	.userCardBg {
+		background-color: @link_hover;
+		height: 70px;
+	}
+	background-color: #fff;
+	.border-radius(2px);
+}
+.userHead {
+	height: 93px;
+	@h: 58px;
+	margin-top: -42px;
+	.tc();
+	.font-fm();
+	img {
+		height: @h;
+		width: @h;
+		vertical-align: top;
+		.border-radius(50%);
+		border: solid 4px #ccc;
+	}
+	h3 {
+		.font-s14();
+	}
+
+}
+
+.userLinks {
+	height: 33px;
+	.clearfix();
+	@w: 65px;
+	width: @w * 3;
+	.bc();
+	li {
+		.fl();
+		width: @w;
+		border-right: solid 1px #ccc;
+		margin-right: -1px;
+		height: 33px;
+		.tc();
+		.font-s12();
+	}
+	.last {
+		border-right: none;
+	}
+	a {
+		color: @link_color;
+	}
+	strong {
+		.d-ib();
+		width: @w;
+		.font-s22();
+		.font-fa();
+	}
+}
+
+.screeningBox {
+	background-color: #fff;
+	.border-radius(2px);
+	margin: 10px 0;
+	height: 30px;
+}
+//共有背景和圆角
+//热门话题
+.hotBox {
+	background-color: #fff;
+	.border-radius(2px);
+}
+
+.hot_title {
+	height: 38px;
+	line-height: 38px;
+	.font-fm();
+	padding: 0 10px;
+	border-bottom: solid 1px #ccc;
+	h3 {
+		.fl();
+		.font-s14();
+	}
+	a {
+		.fr();
+		.font-s12();
+		color: @link_color;
+	}
+}
+
+.hot_list {
+	padding-top: 12px;
+	.font-fm();
+	.font-s12();
+	padding: 12px 10px 0;
+	li {
+		height: 30px;
+		line-height: 30px;
+		vertical-align: top;
+	}
+	a {
+		color: @link_color;
+		.fl();
+		&:hover {
+			color: @link_color_blue;
+		}
+	}
+	span {
+		.fr();
+	}
+}
+
+.hot_more {
+	.font-fm();
+	.font-s12();
+	border-top: solid 1px #ccc;
+	a {
+		color: @link_color;
+		&:hover {
+			color: @link_color_blue;
+		}
+	}
+	background-color: #fff;
+	height: 38px;
+	line-height: 38px;
+	.tc();
+}
